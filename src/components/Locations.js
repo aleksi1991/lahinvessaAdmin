@@ -1,44 +1,47 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 
 const Locations = ({ locations, setValidation }) => {
-
   const styles = {
-    padding: '1rem',
-  }
+    paper: {
+      padding: '1rem',
+    },
+    card: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      padding: '1rem',
+      marginBottom: '1rem',
+    }
+    
+  };
+
 
   return (
     <Grid>
-      <Paper style={styles}>
+      <Paper style={styles.paper} elevation={3}>
         <div>
+          <h2>Hyväksytyt</h2>
 
-          <h2>Locations</h2>
-          <paper elevation={3}>
+          <Card style={styles.card} elevation={3}>
             <div>Nimi</div>
             <Button variant="outlined" color="primary">Muokkaa</Button>
-          </paper>
-          <paper elevation={3}>
-            <div>Nimi</div>
-            <Button variant="outlined" color="primary">Muokkaa</Button>
-          </paper>
-          <paper elevation={3}>
-            <div>Nimi</div>
-            <Button variant="outlined" color="primary">Muokkaa</Button>
-          </paper>
-          <paper elevation={3}>
-            <div>Nimi</div>
-            <Button variant="outlined" color="primary">Muokkaa</Button>
-          </paper>
+            <Button variant="outlined" color="primary">Poista</Button>
+          </Card>
+          
+        
         </div>
       </Paper>
     </Grid>
   );
 };
 
-export default Locations;
 
+
+export default Locations;
 
 // {locations.map((location) => (
 //   <div key={location._id} style={{ display: 'flex' }}>
@@ -47,3 +50,11 @@ export default Locations;
 //     <div style={{ marginRight: '1rem' }}>{location.payable}</div>
 //   </div>
 // ))}
+
+
+// <Card style={styles.card} elevation={3}>
+// <div>Nimi</div>
+// <Button variant="outlined" color="primary">
+//   Muokkaa
+// </Button>
+// </Card>
